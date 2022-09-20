@@ -111,3 +111,57 @@ const MoreOptionsButton = () => (
 );
 
 ReactDOM.render(<Tweet tweet={testTweet} />, document.querySelector("#root"));
+
+// EXERCISE 1
+function AddressLabel({ person }) {
+  return (
+    <div>
+      <div>{person.name}</div>
+      <div>{person.street}</div>
+      <div>{person.city}</div>
+    </div>
+  );
+}
+AddressLabel.propTypes = {
+  person: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    street: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+  }),
+};
+const stevo = {
+  name: "Stevo Iliskovic",
+  street: "Cara Dusana S-28",
+  city: "Samac",
+};
+ReactDOM.render(
+  <AddressLabel person={stevo} />,
+  document.querySelector("#ex1")
+);
+
+// EXERCISE 2
+const Envelope = ({ toPerson, fromPerson }) => (
+  <div class="envelope">
+    <div class="sender">
+      <AddressLabel person={fromPerson} />
+    </div>
+    <div class="recepient-box">
+      <div class="recepient">
+        <AddressLabel person={toPerson} />
+      </div>
+    </div>
+    <div class="stamp">
+      <div class="stamp-desc">Stamp</div>
+    </div>
+  </div>
+);
+
+const elena = {
+  name: "Elena",
+  street: "Russian Street",
+  city: "Moscow",
+};
+ReactDOM.render(
+  <Envelope toPerson={elena} fromPerson={stevo} />,
+  document.querySelector("#ex2")
+);

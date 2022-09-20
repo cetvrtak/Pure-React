@@ -60,3 +60,43 @@
   margin-left: 6px;
   font-weight: bold;
 }
+
+section {
+  margin: 1.6rem 0;
+}
+
+.envelope {
+  border: 1px solid black;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 30rem;
+  height: 10rem;
+  position: relative;
+}
+.sender {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.8rem;
+}
+.recepient-box {
+  align-self: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.stamp {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0.8rem;
+  height: 4rem;
+  border: 1px solid grey;
+}
+.stamp-desc {
+  text-transform: uppercase;
+  transform: rotate(-45deg) translateX(-1rem);
+  transform-origin: top right;
+}
